@@ -1,0 +1,21 @@
+branches:
+  only:
+  - master
+  - /^\d+\.\d+\.\d+$/
+  - /^release\/\d+\.\d+\.x$/
+language: generic
+install: true
+sudo: false
+script: "echo 'Imagine a real build here'"
+deploy:
+# upload release artifacts
+- provider: script
+  script: "echo 'Imagine a real release deploy here'"
+  on:
+    tags: true
+# upload snapshot artifacts
+- provider: script
+  script: "echo 'Imagine a real snapshot deploy here'"
+  on:
+    branch: master
+    condition: "-z '$TRAVIS_TAG'"
