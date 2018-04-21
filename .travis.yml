@@ -18,4 +18,3 @@ deploy:
   script: "echo 'Imagine a real snapshot deploy here'"
   on:
     branch: master
-    condition: "-v TRAVIS_TAG"
